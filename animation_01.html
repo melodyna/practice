@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>01_animation fill mode</title>
+    <style>
+        *{margin: 0;
+        padding: 0;}
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: yellow;
+            animation: ani 3s 3 2s;
+            position: relative;
+        }
+        @keyframes ani{
+            0%{
+                left:200px;
+                background-color: pink;
+            }
+            100%{
+                left: 600px;
+                background-color: lightblue;
+            }
+        }
+        .ani2{
+            animation-fill-mode: forwards;
+        }
+        .ani3{
+            animation-fill-mode: backwards;
+        }
+        .ani4{
+            animation-fill-mode: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="ani1">none</div>
+    <div class="ani2">forwards</div>
+    <div class="ani3">both</div>
+    <div class="ani4">both</div>
+    <h1>animation-fill-mode의 속성값이 없을 때는 none <br>
+    animation-fill-mode:forwards 속성값일 때는 100%스타일에서 끝나서 멈춤 <br>
+    animation-fill-mode:backwards 속성값일 때는 0%속성값을 먼저 가지고 있다가 animation-delay
+    가 되고 play <br>
+    animation-fill-mode:both 속성값일 때는 0%속성값을 먼저 가지고 있다가 animation-delay가 되고
+    play가 된 후 100%스타일에서 끝나서 멈춤
+    </h1>
+</body>
+</html>
